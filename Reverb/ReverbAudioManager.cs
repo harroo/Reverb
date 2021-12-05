@@ -77,7 +77,7 @@ public class ReverbAudioManager : MonoBehaviour {
             ReverbSettings.volume + audioOverride, 0.0f, 1.0f
         );
         audioSource.pitch = Mathf.Clamp(
-            UnityEngine.Random.Range(0.5f, 1.5f) + pitchOverride, -3.0f, 3.0f
+            UnityEngine.Random.Range(0.7f, 1.4f) + pitchOverride, -3.0f, 3.0f
         );
 
         audioSource.gameObject.name = "Temperary Audio Object: " + soundName;
@@ -110,5 +110,19 @@ public class ReverbAudioManager : MonoBehaviour {
     public static void Play (string soundName, float audioOverride, float pitchOverride) {
 
         instance.PlaySound(soundName, audioOverride, pitchOverride);
+    }
+
+
+    public static float GetSoundLength (string soundName) {
+
+        AudioClip clip = Array.Find(instance.clips, ctx => ctx.name == soundName);
+
+        if (clip == null) {
+
+            Debug.LogWarning("[Reverb::AudioManager]: Sound `" + soundName + "' was not found!");
+
+            return 0.0f;
+
+        } else return clip.length;
     }
 }
