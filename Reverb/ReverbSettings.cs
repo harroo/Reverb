@@ -5,5 +5,5 @@
 
 public static class ReverbSettings {
 
-    public static float volume;
+    public static float volume = 1.0f;
 }
