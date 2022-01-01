@@ -50,13 +50,13 @@ ReverbAudioManager.Play3D("mySoundName", new Vector3(0, 1, 0), 1.0f, 1.0f);
 
 
 // To play sounds in the usual sort of way, simply don't specify a position.
-ReverbAudioManager.Play3D("mySoundName");
+ReverbAudioManager.Play("mySoundName");
 
 // This will specify to play at the maximum volume.
-ReverbAudioManager.Play3D("mySoundName", 1.0f);
+ReverbAudioManager.Play("mySoundName", 1.0f);
 
 // This will play at the maximum volume and with rather low pitch.
-ReverbAudioManager.Play3D("mySoundName", 1.0f, -0.8f);
+ReverbAudioManager.Play("mySoundName", 1.0f, -0.8f);
 ```
 These can be written in ANY script, they only require there to an existing `ReverbAudioManager`.
 
